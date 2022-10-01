@@ -106,11 +106,15 @@ public class Cat : MonoBehaviour
         //Change the direction of the cat based on the targets position
         if(target.x > transform.position.x)
         {
-            spriteRenderer.flipX = true;
+            Vector3 rotationVector = transform.rotation.eulerAngles;
+            rotationVector.y = 180;
+            transform.rotation = Quaternion.Euler(rotationVector);
         }
         else
         {
-            spriteRenderer.flipX = false;
+            Vector3 rotationVector = transform.rotation.eulerAngles;
+            rotationVector.y = 0;
+            transform.rotation = Quaternion.Euler(rotationVector);
         }
     }
 
