@@ -9,11 +9,14 @@ public class Cat : MonoBehaviour
     private int startHunger = 100;
 
     private int hungerMeter;
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         hungerMeter = startHunger;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     //lowers hunger of the cat
@@ -21,5 +24,20 @@ public class Cat : MonoBehaviour
     {
         hungerMeter = hungerMeter - amount;
         Debug.Log("Meow " + hungerMeter);
+
+        //Check the hunger and do someting according to the hunger
+        if (hungerMeter < 20)
+        {
+            spriteRenderer.color = new Color(0.8f, 0.2f, 0.2f, 1f);
+        }
+        else if (hungerMeter < 50)
+        {
+            spriteRenderer.color = new Color(0.8f, 0.8f, 0.2f, 1f);
+        }
+        else
+        {
+            spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+        }
     }
+
 }

@@ -19,7 +19,6 @@ public class TickEvent : MonoBehaviour
         // If the next update is reached
         if (Time.time >= nextUpdate)
         {
-            Debug.Log(Time.time + ">=" + nextUpdate);
             // Change the next update (current second+1)
             nextUpdate = Mathf.FloorToInt(Time.time) + 1;
             // Call your fonction
