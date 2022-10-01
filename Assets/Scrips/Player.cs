@@ -9,6 +9,11 @@ public class Player : MonoBehaviour
     // 1 == Food
     public static int currentTool;
 
+    //Texture for the cursor
+    public Texture2D handOpenTexture;
+    public Texture2D handClosedTexture;
+    public Texture2D foodTrayTexture;
+
 
     // Start is called before the first frame update
     void Start()
