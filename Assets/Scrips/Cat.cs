@@ -18,10 +18,6 @@ public class Cat : MonoBehaviour
     void Start()
     {
         hungerMeter = startHunger;
-<<<<<<< Updated upstream
-
-        spriteRenderer = GetComponent<SpriteRenderer>();
-=======
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         fedParticle = GetComponentInChildren<ParticleSystem>();
@@ -31,7 +27,6 @@ public class Cat : MonoBehaviour
     void Tick()
     {
         ChangeHunger();
->>>>>>> Stashed changes
     }
 
     //lowers hunger of the cat
