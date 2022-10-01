@@ -16,6 +16,11 @@ public class Cat : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private ParticleSystem fedParticle;
 
+    //Variables for movement
+    private float waitBeforeMoving = 10f;
+    private bool hasArrived = false;
+    private bool collided = false;
+
     //When the object spawn or gets enabled
     void OnEnable()
     {
@@ -60,5 +65,36 @@ public class Cat : MonoBehaviour
             fedParticle.Play();
         }
     }
+
+    void OnMouseDrag()
+    {
+        //Drags aroud the cat
+        if(Player.currentTool == 0)
+        {
+            Vector2 MousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            Vector2 objPosition = Camera.main.ScreenToWorldPoint(MousePosition);
+            transform.position = objPosition;
+        }
+    }
+
+
+
+
+    private void rollMove()
+    {
+
+    }
+
+    private void move()
+    {
+
+    }
+
+    private void StopMovement()
+    {
+
+    }
+
+
 
 }
