@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Cat : MonoBehaviour
@@ -11,12 +12,19 @@ public class Cat : MonoBehaviour
     private int hungerMeter;
     private SpriteRenderer spriteRenderer;
 
-    // Start is called before the first frame update
-    void Start()
+    //When the object spawn or gets enabled
+    void OnEnable()
     {
+        //Subscribe to the OnTick for every second call function
+        TickEvent.OnTick += Tick;
         hungerMeter = startHunger;
-
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    void Tick()
+    {
+        LowerHunger();
+        Debug.Log("Tick");
     }
 
     //lowers hunger of the cat

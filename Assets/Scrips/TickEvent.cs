@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class TickEvent : MonoBehaviour
 {
-    [Header("Tick runs every second")]
-    public UnityEvent tick;
+    public delegate void Tick();
+    public static event Tick OnTick;
 
 
     // Next update in second
@@ -30,8 +31,7 @@ public class TickEvent : MonoBehaviour
     // Update is called once per second
     void UpdateEverySecond()
     {
-
-        tick.Invoke();
-
+        if(OnTick != null)
+            OnTick();
     }
 }
