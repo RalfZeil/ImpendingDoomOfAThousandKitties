@@ -14,6 +14,7 @@ public class Cat : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private ParticleSystem fedParticle;
+    private Animator animator;
 
     //Variables for movement
     private float speed = 2f;
@@ -28,6 +29,7 @@ public class Cat : MonoBehaviour
         hungerMeter = startHunger;
         spriteRenderer = GetComponent<SpriteRenderer>();
         fedParticle = GetComponentInChildren<ParticleSystem>();
+        animator = GetComponent<Animator>();
     }
 
     void Tick()
@@ -43,7 +45,10 @@ public class Cat : MonoBehaviour
 
         //Clamps the meter
         if(hungerMeter < 0) hungerMeter = 0;
-        if(hungerMeter > 100) hungerMeter = 100;   
+        if(hungerMeter > 100) hungerMeter = 100;  
+        
+        //Change Hunger in animator
+        animator.SetInteger("hungerMeter", hungerMeter);
 
         //Check the hunger and do someting according to the hunger
         if (hungerMeter < 20)
@@ -73,12 +78,19 @@ public class Cat : MonoBehaviour
     void OnMouseDrag()
     {
         //Drags aroud the cat
-        if(Player.currentTool == 0)
+        if (Player.currentTool == 0)
         {
+            animator.SetBool("pickedUp", true);
             Vector2 MousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             Vector2 objPosition = Camera.main.ScreenToWorldPoint(MousePosition);
             transform.position = objPosition;
         }
+    }
+
+    //Dropping the cat
+    void OnMouseUp()
+    {
+        animator.SetBool("pickedUp", false);
     }
 
 
@@ -102,6 +114,7 @@ public class Cat : MonoBehaviour
         target = new Vector2(randX, randY);
 
         hasArrived = false;
+        animator.SetBool("walking", true);
 
         //Change the direction of the cat based on the targets position
         if(target.x > transform.position.x)
@@ -130,6 +143,7 @@ public class Cat : MonoBehaviour
             if(transform.position.Equals(target))
             {
                 hasArrived = true;
+                animator.SetBool("walking", false);
             }
         }
         
