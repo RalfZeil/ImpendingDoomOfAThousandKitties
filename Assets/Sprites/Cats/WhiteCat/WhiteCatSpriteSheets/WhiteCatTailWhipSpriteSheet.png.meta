@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,9 +103,159 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: WhiteCatTailWhipSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 393
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6939f88a21e68e7419f130574b4672e3
+      internalID: -1633391843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhiteCatTailWhipSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 0
+        width: 396
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af8a04a1baeb5ef4ebabaed7eb93359c
+      internalID: 1820982785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhiteCatTailWhipSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 0
+        width: 396
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e03c57a8c4b1b1488d076abc4ef00fc
+      internalID: -1779256893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhiteCatTailWhipSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 0
+        width: 397
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06cda560bb2f754b9c7c4cb28aeff7b
+      internalID: -900591751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhiteCatTailWhipSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 0
+        width: 396
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3526226d1989a4eb7f8a95a53edeca
+      internalID: 949022310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WhiteCatTailWhipSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 0
+        width: 397
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09550c61fada1c244b06dcab743845f9
+      internalID: 1103645660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -116,7 +266,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WhiteCatTailWhipSpriteSheet_4: -2078381934
+      WhiteCatTailWhipSpriteSheet_7: -900591751
+      WhiteCatTailWhipSpriteSheet_12: -464382965
+      WhiteCatTailWhipSpriteSheet_10: -37642215
+      WhiteCatTailWhipSpriteSheet_0: 1146302060
+      WhiteCatTailWhipSpriteSheet_8: 1034493559
+      WhiteCatTailWhipSpriteSheet_1: -1633391843
+      WhiteCatTailWhipSpriteSheet_11: 1103645660
+      WhiteCatTailWhipSpriteSheet_13: -1020693074
+      WhiteCatTailWhipSpriteSheet_15: 1061717171
+      WhiteCatTailWhipSpriteSheet_6: -398594715
+      WhiteCatTailWhipSpriteSheet_14: 1646240840
+      WhiteCatTailWhipSpriteSheet_3: 1820982785
+      WhiteCatTailWhipSpriteSheet_9: 949022310
+      WhiteCatTailWhipSpriteSheet_2: 408610710
+      WhiteCatTailWhipSpriteSheet_17: -14570155
+      WhiteCatTailWhipSpriteSheet_16: 1417608765
+      WhiteCatTailWhipSpriteSheet_5: -1779256893
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
