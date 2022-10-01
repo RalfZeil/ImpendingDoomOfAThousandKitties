@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     //Signifies the current tool the player is holding:
     // 0 == Hand
     // 1 == Food
-    int currentTool;
+    public static int currentTool;
 
 
     // Start is called before the first frame update

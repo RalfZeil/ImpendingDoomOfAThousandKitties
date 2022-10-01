@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,7 +11,10 @@ public class Cat : MonoBehaviour
     private int startHunger = 100;
 
     private int hungerMeter;
+
+
     private SpriteRenderer spriteRenderer;
+    private ParticleSystem fedParticle;
 
     //When the object spawn or gets enabled
     void OnEnable()
@@ -19,19 +23,18 @@ public class Cat : MonoBehaviour
         TickEvent.OnTick += Tick;
         hungerMeter = startHunger;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        fedParticle = GetComponentInChildren<ParticleSystem>();
     }
 
     void Tick()
     {
-        LowerHunger();
-        Debug.Log("Tick");
+        ChangeHunger();
     }
 
     //lowers hunger of the cat
-    public void LowerHunger(int amount=5)
+    public void ChangeHunger(int amount=-5)
     {
-        hungerMeter = hungerMeter - amount;
-        Debug.Log("Meow " + hungerMeter);
+        hungerMeter = hungerMeter + amount;
 
         //Check the hunger and do someting according to the hunger
         if (hungerMeter < 20)
@@ -45,6 +48,16 @@ public class Cat : MonoBehaviour
         else
         {
             spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+        }
+    }
+
+    void OnMouseDown()
+    {
+        //Clicked on the cat with food
+        if(Player.currentTool == 1)
+        {
+            ChangeHunger(50);
+            fedParticle.Play();
         }
     }
 
