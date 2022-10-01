@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private Toolbar toolbar;
+
     //Signifies the current tool the player is holding:
     // 0 == Hand
     // 1 == Food
@@ -18,12 +21,31 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentTool = 0; 
+        SwitchTool(0);
+    }
+
+    public static void ChangeGrabCursor()
+    {
+
     }
 
     public void SwitchTool(int toolID)
     {
         currentTool = toolID;
         Debug.Log("Switched tool to " + currentTool);
+
+        //Hide the toolbar when selecting a tool
+        toolbar.HideToolbox();
+
+        //Change the Cursor sprite with custom texture
+        switch (toolID)
+        {
+            case 0:
+                Cursor.SetCursor(handOpenTexture, Vector2.zero, CursorMode.Auto);
+                break;
+            case 1:
+                Cursor.SetCursor(foodTrayTexture, Vector2.zero, CursorMode.Auto);
+                break;
+        }
     }
 }
