@@ -16,9 +16,10 @@ public class Cat : MonoBehaviour
         hungerMeter = startHunger;
     }
 
-    // Update is called once per frame
-    void Update()
+    //lowers hunger of the cat
+    public void LowerHunger(int amount=5)
     {
-        
+        hungerMeter = hungerMeter - amount;
+        Debug.Log("Meow " + hungerMeter);
     }
 }

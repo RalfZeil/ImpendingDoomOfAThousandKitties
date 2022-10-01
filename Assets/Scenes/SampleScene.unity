@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1469515625}
   - component: {fileID: 1469515624}
+  - component: {fileID: 1469515626}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -207,6 +208,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1469515626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469515623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62bbd231e7591b2409070202433c1767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHunger: 100
 --- !u!1 &1810989984
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +370,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1469515626}
+        m_TargetAssemblyTypeName: Cat, Assembly-CSharp
+        m_MethodName: LowerHunger
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1880025479
 Transform:
   m_ObjectHideFlags: 0
