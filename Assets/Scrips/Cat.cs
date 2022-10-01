@@ -4,26 +4,47 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
+    private SpriteRenderer spriteRenderer;
+    private ParticleSystem fedParticle;
+
     //Hunger Counts down, 100 is full, 0 is empty stomach
     [SerializeField]
     private int startHunger = 100;
 
     private int hungerMeter;
-    private SpriteRenderer spriteRenderer;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         hungerMeter = startHunger;
+<<<<<<< Updated upstream
 
         spriteRenderer = GetComponent<SpriteRenderer>();
+=======
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        fedParticle = GetComponentInChildren<ParticleSystem>();
+    }
+
+    //Tick Event, gets called every second
+    void Tick()
+    {
+        ChangeHunger();
+>>>>>>> Stashed changes
     }
 
     //lowers hunger of the cat
-    public void LowerHunger(int amount=5)
+    public void ChangeHunger(int amount=-5)
     {
-        hungerMeter = hungerMeter - amount;
-        Debug.Log("Meow " + hungerMeter);
+        hungerMeter = hungerMeter + amount;
+        if(hungerMeter < 0)
+        {
+            hungerMeter = 0;
+        } else if (hungerMeter > 100)
+        {
+            hungerMeter = 100;
+        }
 
         //Check the hunger and do someting according to the hunger
         if (hungerMeter < 20)
@@ -40,4 +61,15 @@ public class Cat : MonoBehaviour
         }
     }
 
+
+    void OnMouseDown()
+    {
+        if(Player.currentTool == 1)
+        {
+            //Fed the Cat
+            Debug.Log("Fed the cat");
+            ChangeHunger(50);
+            fedParticle.Play();
+        }
+    }
 }
