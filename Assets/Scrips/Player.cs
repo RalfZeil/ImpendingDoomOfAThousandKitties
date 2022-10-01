@@ -19,5 +19,6 @@ public class Player : MonoBehaviour
     public void SwitchTool(int toolID)
     {
         currentTool = toolID;
+        Debug.Log("Switched tool to " + currentTool);
     }
 }
