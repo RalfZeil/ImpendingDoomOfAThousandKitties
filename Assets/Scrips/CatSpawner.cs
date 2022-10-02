@@ -11,6 +11,8 @@ public class CatSpawner : MonoBehaviour
     private Vector3 spawnLocation = new Vector3(-11, 0, 0);
     private int counter;
 
+    private int score = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,10 @@ public class CatSpawner : MonoBehaviour
             counter = 0;
 
             Instantiate(prefab, spawnLocation, Quaternion.identity);
+
+            score++;
+
+            PlayerPrefs.SetInt("Score", score);
         }
     }
 }
