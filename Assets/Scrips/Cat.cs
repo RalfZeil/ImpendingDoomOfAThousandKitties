@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 using static UnityEngine.GraphicsBuffer;
 
 public class Cat : MonoBehaviour
@@ -17,7 +18,7 @@ public class Cat : MonoBehaviour
     //References to components
     private SpriteRenderer spriteRenderer;
     private ParticleSystem fedParticle;
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
     //Variables for movement
     private float speed = 2f;
@@ -98,7 +99,11 @@ public class Cat : MonoBehaviour
         if(hungerMeter > 100) hungerMeter = 100;  
         
         //Change Hunger in animator
-        animator.SetInteger("hungerMeter", hungerMeter);
+        if(animator != null)
+        {
+            animator.SetInteger("hungerMeter", hungerMeter);
+        }
+
 
         //Check the hunger and do someting according to the hunger
         if (hungerMeter < 20)
@@ -164,7 +169,7 @@ public class Cat : MonoBehaviour
         target = new Vector2(randX, randY);
 
         hasArrived = false;
-        animator.SetBool("walking", true);
+        if(animator != null) animator.SetBool("walking", true);
 
         //Change the direction of the cat based on the targets position
         if(target.x > transform.position.x)
@@ -218,6 +223,11 @@ public class Cat : MonoBehaviour
 
             audioSource.Play();
         }
+    }
+
+    protected void OnDestroy()
+    {
+        TickEvent.OnTick -= Tick;  //  Unsubscribe from the delegate.
     }
 
 }

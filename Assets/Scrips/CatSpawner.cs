@@ -38,4 +38,9 @@ public class CatSpawner : MonoBehaviour
             PlayerPrefs.SetInt("Score", score);
         }
     }
+
+    protected void OnDestroy()
+    {
+        TickEvent.OnTick -= Tick; //Unsubscribe on event
+    }
 }

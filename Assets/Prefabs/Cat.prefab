@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHunger: 100
+  animator: {fileID: 9114011173970521946}
   CatCry: {fileID: 8300000, guid: d0f74f2edf4186042a063b108bb50f10, type: 3}
   LongMeow1: {fileID: 8300000, guid: c84f8e04a1dce7f4ebe6b9393faba495, type: 3}
   LongMeow2: {fileID: 8300000, guid: c17a6efdddc19cb478ea544187c6fd9d, type: 3}
