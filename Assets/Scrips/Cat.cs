@@ -80,6 +80,7 @@ public class Cat : MonoBehaviour
         //Drags aroud the cat
         if (Player.currentTool == 0)
         {
+            //spriteRenderer.sortingOrder = 2;
             Player.HideGrabCursor(true);
             animator.SetBool("pickedUp", true);
             Vector2 MousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -91,6 +92,7 @@ public class Cat : MonoBehaviour
     //Dropping the cat
     void OnMouseUp()
     {
+        //spriteRenderer.sortingOrder = 1;
         animator.SetBool("pickedUp", false);
         Player.HideGrabCursor(false);
     }
