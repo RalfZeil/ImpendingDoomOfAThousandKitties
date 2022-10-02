@@ -12,6 +12,8 @@ public class Cat : MonoBehaviour
     private int startHunger = 100;
     private int hungerMeter;
 
+    private float losePercentage = 35f;
+
     //References to components
     private SpriteRenderer spriteRenderer;
     private ParticleSystem fedParticle;
@@ -29,6 +31,13 @@ public class Cat : MonoBehaviour
     private static int angryCats;
     private bool angry;
 
+    //Audio
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip CatCry;
+    [SerializeField] private AudioClip GrabMeow;
+    [SerializeField] private AudioClip LongMeow1;
+    [SerializeField] private AudioClip LongMeow2;
+
     //When the object spawn or gets enabled
     void OnEnable()
     {
@@ -40,6 +49,7 @@ public class Cat : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         fedParticle = GetComponentInChildren<ParticleSystem>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();  
 
         cats.Add(this);
         maxCats++;
@@ -51,6 +61,7 @@ public class Cat : MonoBehaviour
     {
         ChangeHunger();
         rollMove();
+        
     }
 
     //Check the amount of angry cats, if its more than 50% then lose
@@ -69,17 +80,12 @@ public class Cat : MonoBehaviour
 
         if (maxCats > 0)
         {
-            if (((float)angryCats / (float)maxCats) * 100f > 50f)
+            if (((float)angryCats / (float)maxCats) * 100f > losePercentage)
             {
                 Debug.Log("Switching");
                 LevelLoader.LoadLevelStatic("GameOver");
             }
         }
-    }
-
-    void CheckAngry()
-    {
-
     }
     
 
@@ -191,9 +197,28 @@ public class Cat : MonoBehaviour
                 animator.SetBool("walking", false);
             }
         }
-        
+
+        MakeSound();
     }
 
+    void MakeSound()
+    {
+        if (hungerMeter < 50) audioSource.clip = CatCry;
 
+        if (Random.Range(0, 500) == 0)
+        {
+            switch (Random.Range(0, 3))
+            {
+                case 0:
+                    audioSource.clip = LongMeow1;
+                    break;
+                case 1:
+                    audioSource.clip = LongMeow2;
+                    break;
+            }
+
+            audioSource.Play();
+        }
+    }
 
 }
