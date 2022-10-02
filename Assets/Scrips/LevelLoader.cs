@@ -17,14 +17,19 @@ public class LevelLoader : MonoBehaviour
         transition = GetComponentInChildren<Animator>();
     }
 
+    public static void LoadLevelStatic(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
     //Takes name of the scene to load and starts coroutine
     public void Loadlevel(string name)
     {
-        StartCoroutine(LoadLevel(name));
+        StartCoroutine(LoadLevelRoutine(name));
     }
 
     //Starts the transition and after 1 second load the level
-    IEnumerator LoadLevel(string levelName)
+    IEnumerator LoadLevelRoutine(string levelName)
     {
         transition.SetTrigger("Start");
 

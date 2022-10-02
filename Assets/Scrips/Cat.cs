@@ -22,6 +22,13 @@ public class Cat : MonoBehaviour
     private bool hasArrived = false;
     private Vector2 target;
 
+    //Lose condition
+    private static LevelLoader levelLoader;
+    private static List<Cat> cats = new List<Cat>();
+    private static int maxCats;
+    private static int angryCats;
+    private bool angry;
+
     //When the object spawn or gets enabled
     void OnEnable()
     {
@@ -34,6 +41,9 @@ public class Cat : MonoBehaviour
         fedParticle = GetComponentInChildren<ParticleSystem>();
         animator = GetComponent<Animator>();
 
+        cats.Add(this);
+        maxCats++;
+
         move();
     }
 
@@ -43,6 +53,34 @@ public class Cat : MonoBehaviour
         rollMove();
     }
 
+    //Check the amount of angry cats, if its more than 50% then lose
+    private void Update()
+    {
+        angryCats = 0;
+
+        foreach(Cat cat in cats)
+        {
+            if (cat.angry) angryCats++;
+        }
+
+        Debug.Log(maxCats + " " +  angryCats);
+
+        Debug.Log(((float)angryCats / (float)maxCats) * 100f);
+
+        if (maxCats > 0)
+        {
+            if (((float)angryCats / (float)maxCats) * 100f > 50f)
+            {
+                Debug.Log("Switching");
+                LevelLoader.LoadLevelStatic("GameOver");
+            }
+        }
+    }
+
+    void CheckAngry()
+    {
+
+    }
     
 
     //lowers hunger of the cat
@@ -58,18 +96,14 @@ public class Cat : MonoBehaviour
         animator.SetInteger("hungerMeter", hungerMeter);
 
         //Check the hunger and do someting according to the hunger
-        /*if (hungerMeter < 20)
+        if (hungerMeter < 20)
         {
-            spriteRenderer.color = new Color(0.8f, 0.2f, 0.2f, 1f);
+            angry = true;
         }
-        else if (hungerMeter < 50)
+        else 
         {
-            spriteRenderer.color = new Color(0.8f, 0.8f, 0.2f, 1f);
+            angry = false;
         }
-        else
-        {
-            spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
-        }*/
     }
 
     void OnMouseDown()
@@ -143,7 +177,7 @@ public class Cat : MonoBehaviour
     }
 
     //Moving the cat to target
-    void Update()
+    void FixedUpdate()
     {
         if (!hasArrived)
         {
