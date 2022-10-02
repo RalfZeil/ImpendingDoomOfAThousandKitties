@@ -80,6 +80,7 @@ public class Cat : MonoBehaviour
         //Drags aroud the cat
         if (Player.currentTool == 0)
         {
+            Player.HideGrabCursor(true);
             animator.SetBool("pickedUp", true);
             Vector2 MousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             Vector2 objPosition = Camera.main.ScreenToWorldPoint(MousePosition);
@@ -91,6 +92,7 @@ public class Cat : MonoBehaviour
     void OnMouseUp()
     {
         animator.SetBool("pickedUp", false);
+        Player.HideGrabCursor(false);
     }
 
 

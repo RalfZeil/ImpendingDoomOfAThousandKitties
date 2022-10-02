@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolbar: {fileID: 2091472084}
-  handOpenTexture: {fileID: 2800000, guid: cd4154fee20acae4ea42942368049279, type: 3}
+  handOpenTexture: {fileID: 2800000, guid: 9622685bd22817f4a8ec65b2ab65d022, type: 3}
   handClosedTexture: {fileID: 2800000, guid: be355cf272060324ea6c48da785f6f80, type: 3}
   foodTrayTexture: {fileID: 2800000, guid: 7e304ba7dd37f4844b2cbbefe8dcbc82, type: 3}
 --- !u!4 &1298861326

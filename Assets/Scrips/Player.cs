@@ -24,9 +24,9 @@ public class Player : MonoBehaviour
         SwitchTool(0);
     }
 
-    public static void ChangeGrabCursor()
+    public static void HideGrabCursor(bool on)
     {
-
+        Cursor.visible = !on;
     }
 
     public void SwitchTool(int toolID)
