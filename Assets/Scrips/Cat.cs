@@ -12,6 +12,7 @@ public class Cat : MonoBehaviour
     private int startHunger = 100;
     private int hungerMeter;
 
+    //References to components
     private SpriteRenderer spriteRenderer;
     private ParticleSystem fedParticle;
     private Animator animator;
@@ -27,9 +28,13 @@ public class Cat : MonoBehaviour
         //Subscribe to the OnTick for every second call function
         TickEvent.OnTick += Tick;
         hungerMeter = startHunger;
+
+        //setting all components
         spriteRenderer = GetComponent<SpriteRenderer>();
         fedParticle = GetComponentInChildren<ParticleSystem>();
         animator = GetComponent<Animator>();
+
+        move();
     }
 
     void Tick()
@@ -37,6 +42,8 @@ public class Cat : MonoBehaviour
         ChangeHunger();
         rollMove();
     }
+
+    
 
     //lowers hunger of the cat
     public void ChangeHunger(int amount=-5)
