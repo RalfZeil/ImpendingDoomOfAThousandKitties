@@ -58,7 +58,7 @@ public class Cat : MonoBehaviour
         animator.SetInteger("hungerMeter", hungerMeter);
 
         //Check the hunger and do someting according to the hunger
-        if (hungerMeter < 20)
+        /*if (hungerMeter < 20)
         {
             spriteRenderer.color = new Color(0.8f, 0.2f, 0.2f, 1f);
         }
@@ -69,7 +69,7 @@ public class Cat : MonoBehaviour
         else
         {
             spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
-        }
+        }*/
     }
 
     void OnMouseDown()
