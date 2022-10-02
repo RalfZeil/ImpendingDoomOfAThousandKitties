@@ -34,7 +34,6 @@ public class Cat : MonoBehaviour
     //Audio
     private AudioSource audioSource;
     [SerializeField] private AudioClip CatCry;
-    [SerializeField] private AudioClip GrabMeow;
     [SerializeField] private AudioClip LongMeow1;
     [SerializeField] private AudioClip LongMeow2;
 

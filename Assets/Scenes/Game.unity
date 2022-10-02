@@ -1461,6 +1461,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 311663447307067371, guid: a252c0dff4db0954f9dd3bee8f034fba, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a252c0dff4db0954f9dd3bee8f034fba, type: 3}
@@ -1534,14 +1538,6 @@ PrefabInstance:
     - target: {fileID: 9114011173970521937, guid: 5c4d2474a8b4b63419dd2893237d4288, type: 3}
       propertyPath: m_Name
       value: Cat
-      objectReference: {fileID: 0}
-    - target: {fileID: 9114011173970521948, guid: 5c4d2474a8b4b63419dd2893237d4288, type: 3}
-      propertyPath: prefab
-      value: 
-      objectReference: {fileID: 9114011173970521937, guid: 5c4d2474a8b4b63419dd2893237d4288, type: 3}
-    - target: {fileID: 9114011173970521950, guid: 5c4d2474a8b4b63419dd2893237d4288, type: 3}
-      propertyPath: m_FlipX
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9114011173970521951, guid: 5c4d2474a8b4b63419dd2893237d4288, type: 3}
       propertyPath: m_RootOrder
