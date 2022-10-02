@@ -321,9 +321,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolbar: {fileID: 2091472084}
-  handOpenTexture: {fileID: 2800000, guid: 9622685bd22817f4a8ec65b2ab65d022, type: 3}
+  handOpenTexture: {fileID: 2800000, guid: 1d18fcb6114b1de4ba318cfc3a5897ef, type: 3}
   handClosedTexture: {fileID: 2800000, guid: be355cf272060324ea6c48da785f6f80, type: 3}
-  foodTrayTexture: {fileID: 2800000, guid: 7e304ba7dd37f4844b2cbbefe8dcbc82, type: 3}
+  foodTrayTexture: {fileID: 2800000, guid: 230b2da7d00a07f48a290da537909f92, type: 3}
 --- !u!4 &1298861326
 Transform:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5, y: 77.3}
+  m_AnchoredPosition: {x: 1.5, y: 29.6}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1497973667
@@ -508,7 +508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.6999207, y: 27.900002}
+  m_AnchoredPosition: {x: 1.6999207, y: -29.3}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1515781260
